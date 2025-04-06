@@ -1,4 +1,4 @@
-# mcstatus-cli
+# mcscan
 A CLI application to fetch data from your favourite minecraft server.
 
 # API
