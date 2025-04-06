@@ -1,7 +1,7 @@
 import requests
 import rich
-from handling_requests import *
-from format_data import get_data
+from mc_server_status.handling_requests import *
+from mc_server_status.format_data import get_data
 from termcolor import colored
 import sys
 
@@ -30,6 +30,6 @@ def cli_entry_point():
     app = Main()
     while run:
         app.update()
-
-cli_entry_point()
+if __name__ == "__main__":
+    cli_entry_point()
 

@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+mc_server_status/__init__.py
+mc_server_status/format_data.py
+mc_server_status/handling_requests.py
+mc_server_status/main.py
+mcscan.egg-info/PKG-INFO
+mcscan.egg-info/SOURCES.txt
+mcscan.egg-info/dependency_links.txt
+mcscan.egg-info/entry_points.txt
+mcscan.egg-info/requires.txt
+mcscan.egg-info/top_level.txt
