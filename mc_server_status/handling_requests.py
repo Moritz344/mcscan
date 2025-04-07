@@ -1,6 +1,6 @@
 import requests
 import json
-
+from logging_handler import *
 
 def get_server_info(base,server) -> str:
     response = requests.get(f"{base}/status/java/{server}")
@@ -25,6 +25,7 @@ def get_server_info(base,server) -> str:
         eula_blocked = data["eula_blocked"]
 
         max_number: int = 12
+
         
         # O.O
         if players_on < 100:
@@ -54,11 +55,6 @@ def get_server_info(base,server) -> str:
                 plugins_list = []
                 print("There was an error while loading the plugins.",e)
 
+
         return players_on,players_max,player_list_on,status,version,motd,mods_list,port,eula_blocked,host,plugins_list
 
-        
-
-    else:
-        print("Status Code:",response.status_code)
-
-    
