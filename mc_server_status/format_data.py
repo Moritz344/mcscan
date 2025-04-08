@@ -5,11 +5,16 @@ from termcolor import cprint,colored
 from rich.box import *
 from rich.markdown import Markdown
 from logging_handler import *
+from ascii_art import *
 from rich.prompt import Prompt
 import questionary
+import json
 
-# TODO: ascii art, keine einzelnen panels benutzen
-# TODO: Logging Handler
+# TODO: ascii art
+
+print(ascii_1)
+cprint("[+] Fetch data from your favourite minecraft server. 🧙‍♂️","yellow")
+print()
 
 
 def get_data(players_on,players_max,players_list_on,status,version,motd,mods_list,port,eula_blocked,host,plugins_list):
@@ -63,8 +68,10 @@ def get_data(players_on,players_max,players_list_on,status,version,motd,mods_lis
     if plugins_list == "":
         plugins_list = "N/A"
 
+    json_format = {"Status": f"{status}","Host": f"{host}","Port": f"{port}","MOTD": f"{motd}","Version": f"{version}","Players": f"{players_on/players_max}","Mods": f"{mods_list}","Plugins": f"{plugins_list}","EULA Blocked": f"{eula_blocked}","Player list": f"{players_list_on }"}
+
     answers = questionary.form(
-            select = questionary.select("How would you like to display the data?",choices=["Markdown 🧙‍♂️","Panel 📦"],)
+            select = questionary.select("How would you like to display the data?",choices=["Markdown 🧙‍♂️","Panel 📦","JSON 🧙‍♂️"],)
 
     ).ask()
 
@@ -90,6 +97,9 @@ def get_data(players_on,players_max,players_list_on,status,version,motd,mods_lis
         console.clear()
         md = Markdown(MARKDOWN)
         console.print(md)
+    elif selected_item == "JSON 🧙‍♂️":
+        console.clear()
+        print(json.dumps(json_format,sort_keys=False,indent=4))
     elif selected_item == "Panel 📦":
         panel = Panel(
                 f"[bold yellow]Status:           [/]{status_color}{status}[/]"
@@ -114,7 +124,7 @@ def get_data(players_on,players_max,players_list_on,status,version,motd,mods_lis
 
                 title="Panel",
                 title_align="right",
-                border_style="bold blue",
+                border_style="white",
         )
 
 
