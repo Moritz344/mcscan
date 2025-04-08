@@ -11,7 +11,7 @@ https://github.com/user-attachments/assets/b662b0b1-854e-45ae-9ce3-9db7bf7089b5
 
 # Installation
 ```bash
-pip install mcscan==1.7
+pip install mcscan
 ```
 
 https://pypi.org/project/mcscan/
