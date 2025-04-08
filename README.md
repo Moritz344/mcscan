@@ -3,13 +3,15 @@ A CLI application to fetch data from your favourite minecraft server.
 
 
 
-https://github.com/user-attachments/assets/a4efcb07-458e-4786-af89-d7f63e9a7577
+
+https://github.com/user-attachments/assets/7a3610f3-ef02-4708-bf11-69809f5ccb23
+
 
 
 
 # Installation
 ```bash
-pip install mcscan
+pip install mcscan==1.7
 ```
 
 https://pypi.org/project/mcscan/
