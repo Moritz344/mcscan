@@ -5,8 +5,7 @@ A CLI application to fetch data from your favourite minecraft server.
 
 
 
-https://github.com/user-attachments/assets/7a3610f3-ef02-4708-bf11-69809f5ccb23
-
+https://github.com/user-attachments/assets/b662b0b1-854e-45ae-9ce3-9db7bf7089b5
 
 
 
