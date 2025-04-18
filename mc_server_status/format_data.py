@@ -9,10 +9,13 @@ from ascii_art import *
 from rich.prompt import Prompt
 import questionary
 import json
+import random
 
-# TODO: ascii art
 
+server_rec = ["play.hypixel.net","play.thirdplacemc.net","pvplegacy.net"]
+reco = random.choice(server_rec)
 print(ascii_1)
+cprint(f"[i] Server recommendation: {reco} ","blue")
 cprint("[+] Fetch data from your favourite minecraft server. 🧙‍♂️","yellow")
 print()
 
@@ -68,7 +71,7 @@ def get_data(players_on,players_max,players_list_on,status,version,motd,mods_lis
     if plugins_list == "":
         plugins_list = "N/A"
 
-    json_format = {"Status": f"{status}","Host": f"{host}","Port": f"{port}","MOTD": f"{motd}","Version": f"{version}","Players": f"{players_on/players_max}","Mods": f"{mods_list}","Plugins": f"{plugins_list}","EULA Blocked": f"{eula_blocked}","Player list": f"{players_list_on }"}
+    json_format = {"Status": f"{status}","Host": f"{host}","Port": f"{port}","MOTD": f"{motd}","Version": f"{version}","Players": f"{players_on}/{players_max}","Mods": f"{mods_list}","Plugins": f"{plugins_list}","EULA Blocked": f"{eula_blocked}","Player list": f"{players_list_on }"}
 
     answers = questionary.form(
             select = questionary.select("How would you like to display the data?",choices=["Markdown 🧙‍♂️","Panel 📦","JSON 🧙‍♂️"],)
